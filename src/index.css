@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-ivory font-sans text-ink antialiased;
+    font-feature-settings: 'ss01';
+  }
+  ::selection {
+    @apply bg-coffee text-ivory;
+  }
+  img {
+    @apply select-none;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-site px-5 sm:px-8 lg:px-12;
+  }
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-luxe text-mocha;
+  }
+  .heading-xl {
+    @apply font-serif text-[3.2rem] font-normal leading-[0.95] tracking-[-0.01em] sm:text-7xl lg:text-[6.5rem];
+  }
+  .heading-lg {
+    @apply font-serif text-4xl font-normal leading-[1.05] tracking-[-0.01em] sm:text-5xl lg:text-6xl;
+  }
+  .btn {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-[12px] font-semibold uppercase tracking-[0.18em] transition-all duration-500 ease-premium focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ivory disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-dark {
+    @apply btn bg-espresso text-ivory hover:bg-coffee hover:shadow-[0_12px_30px_-12px_rgba(43,29,20,0.6)];
+  }
+  .btn-outline {
+    @apply btn border border-espresso/25 text-espresso hover:border-espresso hover:bg-espresso hover:text-ivory;
+  }
+  .btn-light {
+    @apply btn bg-ivory text-espresso hover:bg-white;
+  }
+  .btn-ghost-light {
+    @apply btn border border-ivory/40 text-ivory hover:border-ivory hover:bg-ivory hover:text-espresso;
+  }
+  .link-underline {
+    @apply relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-500 after:ease-premium hover:after:origin-left hover:after:scale-x-100;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
